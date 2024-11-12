@@ -4,5 +4,5 @@ variable "group_name"{
 }
 variable "location"{
     description = "localisation du groupe de ressources"
-    type = strin
+    type = string
 }
