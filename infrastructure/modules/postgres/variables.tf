@@ -1,35 +1,19 @@
-#variables nécessaires à la création des éléments du projet
-variable "group_name"{
-    description = "nom du groupe de ressources"
-    type = string
-}
-
-variable "location"{
-    description = "localisation du groupe de ressources"
-    type = string
-}
-
-variable "subscription_id"{
-    description="l'identifiant d'abonnement de l'utilisateur afin de se connecter à Azure"
-    type = string
-}
-
 #variables necessary for the database
 
 variable "name"{
     description = "nom de la base de données"
     type = string
 }
+variable "server_name"{
+    description = "nom du serveur permettant d'accéder à la base de données"
+    type = string
+}
 variable "ressource_group_name"{
-    description = "nom du groupe de ressource auquel est rattaché la base de données"
-    type = string    
+    description = "nom du groupe de ressources auquel est rattaché la base de données
+    type = string
 }
 variable "location"{
     description = "localisation de la base de données"
-    type = string
-}
-variable "server_name"{
-    description = "nom du serveur permettant d'accéder à la base de données"
     type = string
 }
 variable "storage_mb"{

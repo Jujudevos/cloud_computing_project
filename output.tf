@@ -1,10 +1,43 @@
+#variables necessary for the ressource group
+
 output "group_name" {
   description = "Nom du groupe de ressources"
-  value       = var.group_name
+  value       = module.ressource_group.name
 }
 
 output "location" {
   description = "Localisation du groupe de ressources"
-  value       = var.location
+  value       = module.ressource_group.location
 }
 
+#variables necessary to create the database
+
+output "name" {
+  description = "Nom de la base de données"
+  value       = module.postgres.name
+}
+
+output "server_name"{
+    description="nom du serveur sur lequel la base de données est accesible"
+    value=module.postgres.server_name
+}
+
+output "location" {
+  description = "Localisation de la base de données"
+  value       = module.postgres.location
+}
+
+output "ressource_group_name"{
+    description = "nom du groupe de ressources auquel la base de données est rattaché"
+    value = module.postgres.resource_group_name
+}
+
+output "storage_mb"{
+    description = "taille de la base de données"
+    value = module.postgres.storage_mb
+}
+
+output "public_network_access_enabled"{
+    description = "indique si la base de données est accesible publiquement"
+    value = module.postgres.public_network_access_enabled
+}
