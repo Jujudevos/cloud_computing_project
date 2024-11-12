@@ -41,3 +41,13 @@ output "public_network_access_enabled"{
     description = "indique si la base de données est accesible publiquement"
     value = module.postgres.public_network_access_enabled
 }
+
+output "vnet_id" {
+  description = "ID du réseau virtuel"
+  value       = module.virtual_network.id
+}
+
+output "subnet_id" {
+  description = "ID du sous réseau"
+  value       = module.virtual_network.subnet.id
+}

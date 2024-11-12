@@ -4,13 +4,13 @@ provider "azurerm" {
 }
 
 module "ressource_group" {
-  source       = "../modules/ressource_group"
+  source       = "./modules/ressource_group"
   ressource_group_name = var.group_name
   location = var.location
 }
 
 module "postgres" {
-  source = "../modules/postgres
+  source = "./modules/postgres
   name = var.name
   server_name = var.server_name
   resource_group_name = var.resource_group_name
@@ -21,4 +21,14 @@ module "postgres" {
   administrator_password = var.administrator_password
 
 
+}
+
+module "virtual_network" {
+  source              = "./modules/virtual_network"
+  virtual_network_name = var.virtual_network_name
+  address_space       = var.virtual_network.address_space
+  location            = var.virtual_network.location
+  resource_group_name = var.virtual_network.resource_group_name
+  subnet_name         = var.virtual_network.subnet_name
+  subnet_adress = var.virtual_network.subnet_adress
 }

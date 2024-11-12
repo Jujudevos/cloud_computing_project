@@ -5,6 +5,7 @@ resource "azurerm_resource_group" "project" {
 
 resource "azurerm_postgresql_flexible_server" "project" {
   name                          = var.name
+  server_name = var.server_name
   resource_group_name           = var.resource_group_name
   location                      = var.location
   public_network_access_enabled = var.public_network_access_enabled
