@@ -20,11 +20,11 @@ variable "name"{
     description = "nom de la base de données"
     type = string
 }
-variable "ressource_group_name"{
+variable "data_ressource_group_name"{
     description = "nom du groupe de ressource auquel est rattaché la base de données"
     type = string    
 }
-variable "location"{
+variable "data_location"{
     description = "localisation de la base de données"
     type = string
 }
@@ -57,11 +57,11 @@ variable "network_name"{
     description = "nom du réseau virtuel"
     type = string
 }
-variable "location"{
+variable "virtual_network_location"{
     description = "localisation du réseau virtuel"
     type = string
 }
-variable "ressource_group_name"{
+variable "virtual_network_ressource_group_name"{
     description = "nom du groupe de ressource auquel est rattaché le réseau virtuel"
     type = string
 }

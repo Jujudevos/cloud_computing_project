@@ -13,8 +13,8 @@ module "postgres" {
   source = "./modules/postgres
   name = var.name
   server_name = var.server_name
-  resource_group_name = var.resource_group_name
-  location = var.location
+  resource_group_name = var.data_ressource_group_name
+  location = var.data_location
   storage_mb = var.storage_mb
   public_network_access_enabled = var.public_network_access_enabled
   administrator_login = var.administrator_login
@@ -27,8 +27,8 @@ module "virtual_network" {
   source              = "./modules/virtual_network"
   virtual_network_name = var.virtual_network_name
   address_space       = var.virtual_network.address_space
-  location            = var.virtual_network.location
-  resource_group_name = var.virtual_network.resource_group_name
+  location            = var.virtual_network.virtual_network_location
+  resource_group_name = var.virtual_network.virtual_network_ressource_group_name
   subnet_name         = var.virtual_network.subnet_name
   subnet_adress = var.virtual_network.subnet_adress
 }

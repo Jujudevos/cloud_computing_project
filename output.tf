@@ -22,12 +22,12 @@ output "server_name"{
     value=module.postgres.server_name
 }
 
-output "location" {
+output "data_location" {
   description = "Localisation de la base de données"
   value       = module.postgres.location
 }
 
-output "ressource_group_name"{
+output "data_ressource_group_name"{
     description = "nom du groupe de ressources auquel la base de données est rattaché"
     value = module.postgres.resource_group_name
 }
