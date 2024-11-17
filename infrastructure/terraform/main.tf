@@ -24,12 +24,12 @@ module "postgres" {
 
 }
 
-module "virtual_network" {
-  source              = "./modules/virtual_network"
-  virtual_network_name = var.virtual_network_name
-  address_space       = var.virtual_network.address_space
-  location            = var.virtual_network.virtual_network_location
-  resource_group_name = var.virtual_network.virtual_network_ressource_group_name
-  subnet_name         = var.virtual_network.subnet_name
-  subnet_adress = var.virtual_network.subnet_adress
+module "virtual_network"{
+  source = "./modules/virtual_network"
+  network_name = var.network_name
+  address_space = var.address_space
+  location            = module.ressource_group.location
+  group_name = module.ressource_group.group_name
+  subnet_name         = var.subnet_name
+  subnet_adress = var.subnet_adress
 }

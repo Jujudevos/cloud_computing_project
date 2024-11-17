@@ -69,11 +69,11 @@ variable "virtual_network_location"{
     description = "localisation du réseau virtuel"
     type = string
 }
-variable "virtual_network_ressource_group_name"{
+variable "virtual_group_name"{
     description = "nom du groupe de ressource auquel est rattaché le réseau virtuel"
     type = string
 }
-variable "adress_space"{
+variable "address_space"{
     description = "Adresse IP autorisées dans notre réseau virtuel"
     type = list(string)
 }
