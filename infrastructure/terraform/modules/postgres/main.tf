@@ -13,5 +13,7 @@ resource "azurerm_postgresql_flexible_server" "project" {
   administrator_password        = var.administrator_password
 
   storage_mb  = var.storage_mb
+  sku_name = var.sku_name
+  version = var.version_sql
 
 }

@@ -3,10 +3,6 @@ output "name" {
   value       = azurerm_postgresql_flexible_server.project.group_name
 }
 
-output "server_name"{
-    description="nom du serveur sur lequel la base de données est accesible"
-    value=azurerm_postgresql_flexible_server.project.server_name
-}
 
 output "location" {
   description = "Localisation de la base de données"

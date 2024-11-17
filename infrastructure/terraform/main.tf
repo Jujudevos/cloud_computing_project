@@ -12,13 +12,14 @@ module "ressource_group" {
 module "postgres" {
   source = "./modules/postgres
   name = var.name
-  server_name = var.server_name
   resource_group_name = var.data_ressource_group_name
   location = var.data_location
   storage_mb = var.storage_mb
   public_network_access_enabled = var.public_network_access_enabled
   administrator_login = var.administrator_login
   administrator_password = var.administrator_password
+  version_sql = var.version_sql
+  sku_name = var.sku_name
 
 
 }

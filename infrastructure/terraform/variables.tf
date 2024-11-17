@@ -48,7 +48,15 @@ variable "administrator_password"{
     description = mot de passe pour accéder à la base de données"
     type = string
 } 
+variable "sku_name" {
+  description = "nom sku de la base de données"
+  type = string
+} 
 
+variable "version_sql" {
+  description = "version du serveur postgres sql"
+  type = number
+}
 #variables du réseau virtuel
 
 #contient les variables nécessaires au réseau virtuel

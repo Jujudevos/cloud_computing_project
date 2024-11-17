@@ -17,10 +17,6 @@ output "name" {
   value       = module.postgres.name
 }
 
-output "server_name"{
-    description="nom du serveur sur lequel la base de données est accesible"
-    value=module.postgres.server_name
-}
 
 output "data_location" {
   description = "Localisation de la base de données"
