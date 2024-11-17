@@ -8,6 +8,6 @@ resource "azurerm_postgresql_flexible_server" "project" {
 
   storage_mb  = var.storage_mb
   sku_name = var.sku_name
-  version = var.version_sql
+  version = var.version_sq"
 
 }
