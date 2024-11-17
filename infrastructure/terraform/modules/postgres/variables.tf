@@ -4,8 +4,8 @@ variable "name"{
     description = "nom de la base de données"
     type = string
 }
-variable "ressource_group_name"{
-    description = "nom du groupe de ressources auquel est rattaché la base de données
+variable "group_name"{
+    description = "nom du groupe de ressources auquel est rattaché la base de données"
     type = string
 }
 variable "location"{

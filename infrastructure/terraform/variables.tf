@@ -45,7 +45,7 @@ variable "administrator_login"{
     type = string
 }
 variable "administrator_password"{
-    description = mot de passe pour accéder à la base de données"
+    description = "mot de passe pour accéder à la base de données"
     type = string
 } 
 variable "sku_name" {

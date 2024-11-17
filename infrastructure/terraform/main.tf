@@ -5,21 +5,21 @@ provider "azurerm" {
 
 module "ressource_group" {
   source       = "./modules/ressource_group"
-  ressource_group_name = var.group_name
+  group_name = var.group_name
   location = var.location
 }
 
 module "postgres" {
-  source = "./modules/postgres
+  source = "./modules/postgres"
   name = var.name
-  resource_group_name = var.data_ressource_group_name
-  location = var.data_location
+  group_name = module.ressource_group.group_name
+  sku_name = var.sku_name
+  location = module.ressource_group.location
   storage_mb = var.storage_mb
   public_network_access_enabled = var.public_network_access_enabled
   administrator_login = var.administrator_login
   administrator_password = var.administrator_password
   version_sql = var.version_sql
-  sku_name = var.sku_name
 
 
 }
