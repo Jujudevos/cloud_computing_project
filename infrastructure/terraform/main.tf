@@ -33,3 +33,15 @@ module "virtual_network"{
   subnet_name         = var.subnet_name
   subnet_address = var.subnet_address
 }
+
+#blob storage
+
+module "blob_storage" {
+  source = "./modules/blob_storage"
+
+  blob_name = var.blob_name
+  location = module.ressource_group.location
+  container_name = var.container_name
+  group_name = module.ressource_group.group_name
+  storage_account_name =var.storage_account_name
+}

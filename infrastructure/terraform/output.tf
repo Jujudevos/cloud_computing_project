@@ -10,7 +10,7 @@ output "location" {
   value       = module.ressource_group.location
 }
 
-#variables necessary to create the database
+#output necessary to create the database
 
 /*output "name" {
   description = "Nom de la base de données"
@@ -46,4 +46,11 @@ output "vnet_id" {
 output "subnet_id" {
   description = "ID du sous réseau"
   value       = module.virtual_network.subnet_id
+}
+
+#Output of the blob storage
+
+output "url" {
+  description = "url du blob storage"
+  value = module.blob_storage.url
 }
