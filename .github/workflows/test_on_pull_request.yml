@@ -1,0 +1,11 @@
+name: Réalisation de tests lors d'une pull request
+
+# Tests réalisés sur les pull requests sur la branche main
+on: 
+    pull_request:
+        branches: [ "main" ]
+
+# Pour l'instant rien de particulier n'est fait, on spécifie juste que les tests tournent sur Ubuntu
+jobs:
+    tests:
+        runs-on: ubuntu-latest
