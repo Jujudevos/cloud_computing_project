@@ -16,7 +16,7 @@ variable "subscription_id"{
 
 #variables necessary for the database
 
-variable "name"{
+/*variable "name"{
     description = "nom de la base de données"
     type = string
 }
@@ -50,12 +50,12 @@ variable "sku_name" {
 variable "version_sql" {
   description = "version du serveur postgres sql"
   type = number
-}
+}*/
 #variables du réseau virtuel
 
 #contient les variables nécessaires au réseau virtuel
 
-/*variable "network_name"{
+variable "network_name"{
     description = "nom du réseau virtuel"
     type = string
 }
@@ -75,7 +75,7 @@ variable "subnet_name"{
     description = "nom du sous réseau"
     type = string
 }
-variable "subnet_adress"{
+variable "subnet_address"{
     description = "adresses du sous réseau"
     type = list(string)
-}*/
+}

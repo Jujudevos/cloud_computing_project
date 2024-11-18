@@ -20,7 +20,7 @@ variable "subnet_name"{
     description = "nom du sous réseau"
     type = string
 }
-variable "subnet_adress"{
+variable "subnet_address"{
     description = "adresses du sous réseau"
     type = list(string)
 }

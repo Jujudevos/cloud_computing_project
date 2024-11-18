@@ -9,7 +9,7 @@ module "ressource_group" {
   location = var.location
 }
 
-module "postgres" {
+/*module "postgres" {
   source = "./modules/postgres"
   name = var.name
   group_name = module.ressource_group.group_name
@@ -22,14 +22,14 @@ module "postgres" {
   version_sql = var.version_sql
 
 
-}
+}*/
 
-/*module "virtual_network"{
+module "virtual_network"{
   source = "./modules/virtual_network"
   network_name = var.network_name
   address_space = var.address_space
   location            = module.ressource_group.location
   group_name = module.ressource_group.group_name
   subnet_name         = var.subnet_name
-  subnet_adress = var.subnet_adress
-}*/
+  subnet_address = var.subnet_address
+}
