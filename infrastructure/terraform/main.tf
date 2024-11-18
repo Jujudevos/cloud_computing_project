@@ -24,7 +24,7 @@ module "postgres" {
 
 }
 
-module "virtual_network"{
+/*module "virtual_network"{
   source = "./modules/virtual_network"
   network_name = var.network_name
   address_space = var.address_space
@@ -32,4 +32,4 @@ module "virtual_network"{
   group_name = module.ressource_group.group_name
   subnet_name         = var.subnet_name
   subnet_adress = var.subnet_adress
-}
+}*/

@@ -1,6 +1,6 @@
 output "name" {
   description = "Nom de la base de données"
-  value       = azurerm_postgresql_flexible_server.project.group_name
+  value       = azurerm_postgresql_flexible_server.project.name
 }
 
 
@@ -11,7 +11,7 @@ output "location" {
 
 output "ressource_group_name"{
     description = "nom du groupe de ressources auquel la base de données est rattaché"
-    value = azurerm_postgresql_flexible_server.project.ressource_group_name
+    value = azurerm_postgresql_flexible_server.project.resource_group_name
 }
 
 output "storage_mb"{

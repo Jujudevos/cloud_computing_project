@@ -20,18 +20,12 @@ variable "name"{
     description = "nom de la base de données"
     type = string
 }
-variable "data_ressource_group_name"{
-    description = "nom du groupe de ressource auquel est rattaché la base de données"
-    type = string    
-}
+
 variable "data_location"{
     description = "localisation de la base de données"
     type = string
 }
-variable "server_name"{
-    description = "nom du serveur permettant d'accéder à la base de données"
-    type = string
-}
+
 variable "storage_mb"{
     description = "taille de la base de données"
     type = number
@@ -61,7 +55,7 @@ variable "version_sql" {
 
 #contient les variables nécessaires au réseau virtuel
 
-variable "network_name"{
+/*variable "network_name"{
     description = "nom du réseau virtuel"
     type = string
 }
@@ -84,4 +78,4 @@ variable "subnet_name"{
 variable "subnet_adress"{
     description = "adresses du sous réseau"
     type = list(string)
-}
+}*/
