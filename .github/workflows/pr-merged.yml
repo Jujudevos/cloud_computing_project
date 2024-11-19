@@ -1,0 +1,64 @@
+name: Réalisation de tests lors de la création d'une pull request
+
+# Tests réalisés sur les pull requests sur la branche main
+on: 
+    pull_request:
+        branches: [ "main" ]
+        types: [ synchronize ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+# Pour l'instant rien de particulier n'est fait, on spécifie juste que les tests tournent sur Ubuntu
+jobs:
+    uv_merged_tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4 # Permet d'accéder aux fichiers du dêpot
+
+            - uses: actions/setup-python@v5 # Installe python 3.13
+              with:
+                python-version: '3.13'
+
+            - uses: astral-sh/setup-uv@v3 # Installe uv
+              with:
+                version: "latest"
+
+            - run: uv sync # Installe les dépendances
+            - run: uv build # Compile le projet
+            - run: uv run pytest tests/ # Lance les tests compris dans le dossier tests
+
+    publish_api_image:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+
+        steps:
+            - uses: actions/checkout@v4 # Permet d'accéder aux fichiers du dêpot
+
+            # De https://github.com/devopsjourney1/mypackages/blob/master/.github/workflows/deploy-image.yml
+            - name: Log in to the Container registry
+              uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+              with:
+                registry: ${{ env.REGISTRY }}
+                username: ${{ github.actor }}
+                password: ${{ secrets.GITHUB_TOKEN }}
+    
+            - name: Extract metadata (tags, labels) for Docker
+              id: meta
+              uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+              with:
+                images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+                tags: |
+                    type=ref,event=branch
+                    type=sha
+        
+            - name: Build and push Docker image
+              uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+              with:
+                context: .
+                push: true
+                tags: ${{ steps.meta.outputs.tags }}
+                labels: ${{ steps.meta.outputs.labels }}

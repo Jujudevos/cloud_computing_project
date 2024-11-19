@@ -4,10 +4,11 @@ name: Réalisation de tests lors de la création d'une pull request
 on: 
     pull_request:
         branches: [ "main" ]
+        types: [ opened ]
 
 # Pour l'instant rien de particulier n'est fait, on spécifie juste que les tests tournent sur Ubuntu
 jobs:
-    tests:
+    uv_opened_tests:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4 # Permet d'accéder aux fichiers du dêpot
