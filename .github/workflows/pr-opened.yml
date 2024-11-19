@@ -25,3 +25,4 @@ jobs:
           - run: uv sync # Installe les dépendances
           - run: uv build # Compile le projet
           - run: uv run pytest tests/ # Lance les tests compris dans le dossier tests
+          
