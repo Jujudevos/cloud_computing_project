@@ -7,7 +7,7 @@ name: Réalisation de tests lors de la fusion d'une pull request
 #        types: [ synchronize ]
 
 on:
-    push
+    push 
 
 env:
   REGISTRY: ghcr.io

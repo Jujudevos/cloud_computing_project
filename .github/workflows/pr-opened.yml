@@ -1,7 +1,7 @@
 name: Réalisation de tests lors de la création d'une pull request
 
 # Tests réalisés sur les pull requests sur la branche main
-on: 
+on:  
     pull_request:
         branches: [ "main" ]
         types: [ opened ]
