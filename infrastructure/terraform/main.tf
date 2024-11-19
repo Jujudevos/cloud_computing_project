@@ -9,6 +9,15 @@ module "ressource_group" {
   location = var.location
 }
 
+module "virtual_network"{
+  source = "./modules/virtual_network"
+  network_name = var.network_name
+  address_space = var.address_space
+  location            = module.ressource_group.location
+  group_name = module.ressource_group.group_name
+  subnet_name         = var.subnet_name
+  subnet_address = var.subnet_address
+}
 /*module "postgres" {
   source = "./modules/postgres"
   name = var.name
@@ -24,19 +33,10 @@ module "ressource_group" {
 
 }*/
 
-module "virtual_network"{
-  source = "./modules/virtual_network"
-  network_name = var.network_name
-  address_space = var.address_space
-  location            = module.ressource_group.location
-  group_name = module.ressource_group.group_name
-  subnet_name         = var.subnet_name
-  subnet_address = var.subnet_address
-}
 
 #blob storage
 
-module "blob_storage" {
+/*module "blob_storage" {
   source = "./modules/blob_storage"
 
   blob_name = var.blob_name
@@ -44,4 +44,4 @@ module "blob_storage" {
   container_name = var.container_name
   group_name = module.ressource_group.group_name
   storage_account_name =var.storage_account_name
-}
+}*/

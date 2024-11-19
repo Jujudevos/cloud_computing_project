@@ -1,4 +1,8 @@
-#variables nécessaires à la création des éléments du projet
+variable "subscription_id"{
+    description="l'identifiant d'abonnement de l'utilisateur afin de se connecter à Azure"
+    type = string
+}
+#variables nécessaires à la création du groupe de ressource
 variable "group_name"{
     description = "nom du groupe de ressources"
     type = string
@@ -7,13 +11,28 @@ variable "group_name"{
 variable "location"{
     description = "localisation du groupe de ressources"
     type = string
+    default = "France Central"
 }
 
-variable "subscription_id"{
-    description="l'identifiant d'abonnement de l'utilisateur afin de se connecter à Azure"
+#variables du réseau virtuel
+variable "network_name"{
+    description = "nom du réseau virtuel"
     type = string
 }
-
+variable "address_space"{
+    description = "Adresse IP autorisées dans notre réseau virtuel"
+    type = list(string)
+    default = [ "10.0.0.0/16" ]
+}
+variable "subnet_name"{
+    description = "nom du sous réseau"
+    type = string
+}
+variable "subnet_address"{
+    description = "adresses du sous réseau"
+    type = list(string)
+    default = [ "10.0.1.0/24" ]
+}
 #variables necessary for the database
 
 /*variable "name"{
@@ -51,39 +70,12 @@ variable "version_sql" {
   description = "version du serveur postgres sql"
   type = number
 }*/
-#variables du réseau virtuel
 
-#contient les variables nécessaires au réseau virtuel
-
-variable "network_name"{
-    description = "nom du réseau virtuel"
-    type = string
-}
-variable "virtual_network_location"{
-    description = "localisation du réseau virtuel"
-    type = string
-}
-variable "virtual_group_name"{
-    description = "nom du groupe de ressource auquel est rattaché le réseau virtuel"
-    type = string
-}
-variable "address_space"{
-    description = "Adresse IP autorisées dans notre réseau virtuel"
-    type = list(string)
-}
-variable "subnet_name"{
-    description = "nom du sous réseau"
-    type = string
-}
-variable "subnet_address"{
-    description = "adresses du sous réseau"
-    type = list(string)
-}
 
 #variables du blob storage
 
 
-variable "storage_group_name" {
+/*variable "storage_group_name" {
   description = "nom du groupe de ressources auquel est rattaché le compte de stockage"
   type = string
 }
@@ -103,3 +95,4 @@ variable "blob_name" {
   description = "nom du stockage blob"
   type = string
 }
+*/
