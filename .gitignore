@@ -178,5 +178,3 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Ignore any sensitive files (like terraform.tfvars)
-terraform.tfvars
