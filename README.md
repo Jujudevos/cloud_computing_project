@@ -44,3 +44,5 @@ They go on:
 - http://localhost:8000/docs
 - http://localhost:8000/
 - http://localhost:8000/examples
+
+# Test CI/CD
