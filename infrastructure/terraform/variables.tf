@@ -1,6 +1,7 @@
 variable "subscription_id"{
     description="l'identifiant d'abonnement de l'utilisateur afin de se connecter à Azure"
     type = string
+    sensitive = true
 }
 #variables nécessaires à la création du groupe de ressource
 variable "group_name"{
@@ -33,45 +34,36 @@ variable "subnet_address"{
     type = list(string)
     default = [ "10.0.1.0/24" ]
 }
-#variables necessary for the database
 
-/*variable "name"{
+#variables pour relier la base de données au réseau virtuel
+variable "dns_name" {
+  description = "nom du dns"
+  type = string
+}
+variable "name_dns_link" {
+  description = "nom du lien dns"
+  type = string
+}
+
+#variables pour le serveur flexible et la base de données
+variable "flexible_server_name"{
     description = "nom de la base de données"
     type = string
-}
-
-variable "data_location"{
-    description = "localisation de la base de données"
-    type = string
-}
-
-variable "storage_mb"{
-    description = "taille de la base de données"
-    type = number
-}
-variable "public_network_access_enabled"{
-    description = "indique si la base de données est accesible publiquement"
-    type = bool
 }
 variable "administrator_login"{
     description = "identifiant pour accéder à la base de données"
     type = string
+    sensitive = true
 }
 variable "administrator_password"{
     description = "mot de passe pour accéder à la base de données"
     type = string
+    sensitive = true
 } 
-variable "sku_name" {
-  description = "nom sku de la base de données"
+variable "data_name" {
+  description = "nom de la base de données"
   type = string
-} 
-
-variable "version_sql" {
-  description = "version du serveur postgres sql"
-  type = number
-}*/
-
-
+}
 #variables du blob storage
 
 

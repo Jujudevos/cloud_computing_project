@@ -18,6 +18,20 @@ module "virtual_network"{
   subnet_name         = var.subnet_name
   subnet_address = var.subnet_address
 }
+
+module "postgres" {
+  source = "./modules/postgres"
+  dns_name = var.dns_name
+  group_name = module.ressource_group.group_name
+  name_dns_link = var.name_dns_link
+  flexible_server_name = var.flexible_server_name
+  location = module.ressource_group.location
+  subnet_id = module.virtual_network.subnet_id
+  administrator_login = var.administrator_login
+  administrator_password = var.administrator_password
+  data_name = var.data_name
+  virtual_network_id = module.virtual_network.vnet_id
+}
 /*module "postgres" {
   source = "./modules/postgres"
   name = var.name
