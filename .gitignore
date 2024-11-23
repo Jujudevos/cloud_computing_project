@@ -171,10 +171,14 @@ cython_debug/
 # Ignore terraform cache and provider files
 .terraform/
 .terraform.lock.hcl
+.terraform.tfstate.lock.info
 
 # Ignore override files (used for local modifications)
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+
+# Ignore any sensitive files (like terraform.tfvars)
+terraform.tfvars
 
