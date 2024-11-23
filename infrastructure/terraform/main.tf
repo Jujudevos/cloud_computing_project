@@ -31,30 +31,12 @@ module "postgres" {
   data_name = var.data_name
   virtual_network_id = module.virtual_network.vnet_id
 }
-/*module "postgres" {
-  source = "./modules/postgres"
-  name = var.name
-  group_name = module.ressource_group.group_name
-  sku_name = var.sku_name
-  location = module.ressource_group.location
-  storage_mb = var.storage_mb
-  public_network_access_enabled = var.public_network_access_enabled
-  administrator_login = var.administrator_login
-  administrator_password = var.administrator_password
-  version_sql = var.version_sql
-
-
-}*/
-
-
 #blob storage
 
-/*module "blob_storage" {
+module "blob_storage" {
   source = "./modules/blob_storage"
 
-  blob_name = var.blob_name
   location = module.ressource_group.location
   container_name = var.container_name
   group_name = module.ressource_group.group_name
-  storage_account_name =var.storage_account_name
-}*/
+}
