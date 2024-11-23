@@ -11,9 +11,15 @@ resource "azurerm_private_dns_zone_virtual_network_link" "project" {
   resource_group_name   = var.group_name
 }
 
+# As the flexible_server name must be unique, we are using a random string to generate it
+resource "random_string" "my_random_server_name" {
+  length  = 32
+  special = false
+  upper   = false # The flexible server name must be lowercase so we are setting upper to false
+}
 
 resource "azurerm_postgresql_flexible_server" "project" {
-  name                          = var.flexible_server_name
+  name                          = "postgresqlflexibleserver${random_string.my_random_server_name.result}" # inject the random string
   resource_group_name           = var.group_name
   location                      = var.location
   version                       = "14"
@@ -30,6 +36,8 @@ resource "azurerm_postgresql_flexible_server" "project" {
   depends_on = [azurerm_private_dns_zone_virtual_network_link.project]
 
 }
+
+
 
 resource "azurerm_postgresql_flexible_server_database" "project" {
   name      = var.data_name

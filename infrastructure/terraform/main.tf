@@ -24,7 +24,6 @@ module "postgres" {
   dns_name = var.dns_name
   group_name = module.ressource_group.group_name
   name_dns_link = var.name_dns_link
-  flexible_server_name = var.flexible_server_name
   location = module.ressource_group.location
   subnet_id = module.virtual_network.subnet_id
   administrator_login = var.administrator_login

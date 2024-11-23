@@ -46,10 +46,6 @@ variable "name_dns_link" {
 }
 
 #variables pour le serveur flexible et la base de données
-variable "flexible_server_name"{
-    description = "nom de la base de données"
-    type = string
-}
 variable "administrator_login"{
     description = "identifiant pour accéder à la base de données"
     type = string

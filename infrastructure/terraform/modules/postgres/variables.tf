@@ -13,10 +13,6 @@ variable "virtual_network_id" {
 }
 
 #variables pour le serveur flexible et la base de données
-variable "flexible_server_name"{
-    description = "nom de la base de données"
-    type = string
-}
 variable "group_name"{
     description = "nom du groupe de ressources auquel est rattaché la base de données"
     type = string
