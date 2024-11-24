@@ -46,8 +46,8 @@ module "blob_storage" {
 module "app_service" {
   source = "./modules/app_service"
   web_app_name =      var.web_app_name
-  group_name = module.resource_group.group_name
-  location   = module.resource_group.location
+  group_name = module.ressource_group.group_name
+  location   = module.ressource_group.location
 
   #ressources docker
   docker_image_name             = var.docker_image_name
