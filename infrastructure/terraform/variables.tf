@@ -65,3 +65,30 @@ variable "container_name" {
   description = "nom du conteneur de stockage"
   type = string
 }
+
+#variables de l'app service
+
+variable "service_plan_name" {
+  description = "nom du plan de service"
+  type = string
+}
+variable "web_app_name" {
+  description = "nom de l'app web"
+  type = string
+}
+variable "docker_url" {
+  description = "url du conteneur docker"
+  type = string
+}
+variable "docker_image_name" {
+  description = "nom de l'image docker"
+  type = string
+}
+variable "docker_username" {
+  description = "identifiant pour accéder au docker"
+  type = string
+}
+variable "docker_password" {
+  description = "mot de passe pour accéder au docker"
+  type = string
+}

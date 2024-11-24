@@ -40,3 +40,33 @@ module "blob_storage" {
   container_name = var.container_name
   group_name = module.ressource_group.group_name
 }
+
+#app service
+
+module "app_service" {
+  source = "./modules/app_service"
+  web_app_name =      var.web_app_name
+  group_name = module.resource_group.group_name
+  location   = module.resource_group.location
+
+  #ressources docker
+  docker_image_name             = var.docker_image_name
+  docker_username = var.docker_username
+  docker_password = var.docker_password
+  docker_url      = var.docker_url
+
+  #sous réseau de l'api
+  subnet_id = module.virtual_network.subnet_id
+  service_plan_name = var.service_plan_name
+
+  #base de données
+  postgres_host = module.postgres.posgres_port
+  postgres_port = module.postgres.posgres_port
+  postgres_name = module.postgres.postgres_name
+  administrator_login = var.administrator_login
+  administrator_password = var.administrator_password
+
+  #blob storage
+  storage_url = module.blob_storage.url
+  storage_id = module.blob_storage.storage_id
+}
