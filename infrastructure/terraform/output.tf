@@ -25,7 +25,7 @@ output "subnet_id" {
 
 output "postgres_host" {
   description = "server pour accéder à la base de données"
-  value = module.postgres.fqdn
+  value = module.postgres.postgres_host
 }
 output "posgres_port" {
   description = "port pour accéder à la base de données"
@@ -33,7 +33,7 @@ output "posgres_port" {
 }
 output "postgres_name" {
   description = "nom de la base de données"
-  value = module.postgres.name
+  value = module.postgres.postgres_name
 }
 output "administrator_login" {
   description = "identifiant pour accéder à la base de données"
