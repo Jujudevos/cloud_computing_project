@@ -45,4 +45,17 @@ They go on:
 - http://localhost:8000/
 - http://localhost:8000/examples
 
-# Test CI/CD 
+## Test CI/CD
+
+Docker image deployed when merging a pull request
+
+## How does it work ?
+Run on the `terraform` folder:
+```
+terraform init
+terraform apply
+```
+Then choose the names of the resources as you want.
+
+## Team
+Made by DEVOS Julien, GILBERT Pierre-Antoine, JAUBERT Léo, LAALOU Achraf
