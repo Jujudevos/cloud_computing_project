@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  AZURE_WEBAPP_NAME: project
+  AZURE_WEBAPP_NAME: GDLJProject
 
 # Pour l'instant rien de particulier n'est fait, on spécifie juste que les tests tournent sur Ubuntu
 jobs:
