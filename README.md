@@ -45,7 +45,7 @@ They go on:
 - http://localhost:8000/
 - http://localhost:8000/examples
 
-## Test CI/CD
+## Test CI/CD 
 
 Docker image deployed when merging a pull request
 
