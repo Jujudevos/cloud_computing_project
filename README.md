@@ -55,7 +55,7 @@ Run on the `terraform` folder: (terraform folder is situated in infrastructure f
 terraform init
 terraform apply
 ```
-Then choose the names of the resources as you want. These variables are documented when you run terraform apply. Some sensibles are sensible so we put it in the file terraform.tfvars. these variables are the azure subcription 's id, the administrator login and password for the database, the docker container login and password.
+Then choose the names of the resources as you want. These variables are documented when you run terraform apply. Some variables are sensible so we put it in the file terraform.tfvars. these variables are the azure subcription 's id, the administrator login and password for the database, the docker container login and password.
 
 ## Team
 Made by DEVOS Julien, GILBERT Pierre-Antoine, JAUBERT Léo, LAALOU Achraf
