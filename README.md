@@ -50,12 +50,12 @@ They go on:
 Docker image deployed when merging a pull request
 
 ## How does it work ?
-Run on the `terraform` folder:
+Run on the `terraform` folder: (terraform folder is situated in infrastructure folder. So you should be in infrastructure/terraform)
 ```
 terraform init
 terraform apply
 ```
-Then choose the names of the resources as you want.
+Then choose the names of the resources as you want. These variables are documented when you run terraform apply. Some sensibles are sensible so we put it in the file terraform.tfvars. these variables are the azure subcription 's id, the administrator login and password for the database, the docker container login and password.
 
 ## Team
 Made by DEVOS Julien, GILBERT Pierre-Antoine, JAUBERT Léo, LAALOU Achraf
