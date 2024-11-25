@@ -1,3 +1,4 @@
+#As we were a little late for this part, we inspired about Louis Skrzypczak code
 resource "azurerm_service_plan" "project" {
   name                = var.service_plan_name
   resource_group_name = var.group_name
@@ -12,7 +13,6 @@ resource "azurerm_linux_web_app" "project" {
   location            = var.location
   service_plan_id     = azurerm_service_plan.project.id
   public_network_access_enabled = true
-  virtual_network_subnet_id     = var.subnet_id
 
   site_config {
     application_stack {

@@ -19,6 +19,7 @@ resource "azurerm_subnet" "subnet" {
       actions = [
         "Microsoft.Network/virtualNetworks/subnets/join/action",
       ]
+      
     }
   }
 }

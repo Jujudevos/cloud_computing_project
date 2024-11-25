@@ -56,3 +56,9 @@ output "storage_id" {
   description = "identifiant du compte de stockage"
   value = module.blob_storage.storage_id
 }
+
+#lien de l'app service
+output "app_service_link" {
+  description = "lien de l'app service"
+  value = module.app_service.app_service_link
+}

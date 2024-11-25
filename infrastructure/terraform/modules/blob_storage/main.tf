@@ -3,6 +3,8 @@ resource "random_string" "random_storage_name" {
   special = false
   upper   = false
 }
+
+#After a test, we saw that the name needs to be unique on Azure. Louis Skrzypczak told us about the random module created by terraform
 resource "azurerm_storage_account" "project"{
     name = "examplestoracc${random_string.random_storage_name.result}"
     resource_group_name = var.group_name
