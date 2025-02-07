@@ -31,7 +31,7 @@ module "postgres" {
   data_name = var.data_name
   virtual_network_id = module.virtual_network.vnet_id
 }
-#blob storage
+#blob storag
 
 module "blob_storage" {
   source = "./modules/blob_storage"
